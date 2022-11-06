@@ -9,7 +9,7 @@ import pandas as pd
 
 #Leemos el archivo con pandas
 
-df_netflix = pd.read_csv(r'C:\Users\jpost\Documents\proyecto1_sup07\csv\netflix.csv')
+df_netflix = pd.read_csv('netflix.csv')
 
 #Hacemos una copia del archivo por cualquier cosa
 
