@@ -1,5 +1,9 @@
 #Importamos librerias para limpieza
 
+from fastapi import FastAPI
+
+app = FastAPI()
+
 import numpy as np
 import pandas as pd
 
@@ -50,10 +54,6 @@ net_2021= netf_2021.reset_index().to_dict(orient="index")
 
 
 #Creamos la Api
-
-from fastapi import FastAPI
-
-app = FastAPI()
 
 @app.get("/")
 async def index():
