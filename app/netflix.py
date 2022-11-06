@@ -11,40 +11,24 @@ import pandas as pd
 
 df_netflix = pd.read_csv('netflix.csv')
 
-#Hacemos una copia del archivo por cualquier cosa
-
-df_netflix_mod = df_netflix.copy()
-
-#Vemos las primeras cinco filas del dataframe
-
-df_netflix_mod.head()
-
-#Observamos que cantidad y tipos de datos tiene cada columna
-
-df_netflix_mod.info()
-
 #Cambiamos el tipo de dato de la columna date_added
 
 from datetime import datetime
-df_netflix_mod['date_added'] = pd.to_datetime(df_netflix_mod['date_added'])
-
-#Volvemos a observar para ver si realmente se cambio el tipo de dato
-
-df_netflix_mod.info()
+df_netflix['date_added'] = pd.to_datetime(df_netflix['date_added'])
 
 #Ordenamos los campos en forma ascendente por fecha (del mas viejo al mas nuevo) 
 
-df_netflix_mod.sort_values(by=['date_added'], inplace= True)
+df_netflix.sort_values(by=['date_added'], inplace= True)
 
 #Reemplazamos los campos que tengan 'Not Given' en la columna director
 
-df_netflix_mod.loc[df_netflix_mod['director'].str.contains('Not Given', case = False), 'director'] = 'None'
+df_netflix.loc[df_netflix['director'].str.contains('Not Given', case = False), 'director'] = 'None'
 
 #Creamos los dataframes con las mascaras solo de los años que queremos 
 
-netf_2019 = df_netflix_mod[df_netflix_mod["release_year"] == 2019]
-netf_2020 = df_netflix_mod[df_netflix_mod["release_year"] == 2020]
-netf_2021 = df_netflix_mod[df_netflix_mod["release_year"] == 2021]
+netf_2019 = df_netflix[df_netflix["release_year"] == 2019]
+netf_2020 = df_netflix[df_netflix["release_year"] == 2020]
+netf_2021 = df_netflix[df_netflix["release_year"] == 2021]
 
 #Transformamos en diccionario los dataframes
 
