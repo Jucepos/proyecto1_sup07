@@ -55,18 +55,18 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get('/')
+@app.get("/")
 async def index():
-    return {'Elegi el catalogo que quieras ver /2019 /2020 /2021'}
+    return {"Elegi el catalogo que quieras ver /2019 /2020 /2021"}
 
-@app.get('/2019')
+@app.get("/2019")
 async def index():
     return net_2019
 
-@app.get('/2020')
+@app.get("/2020")
 async def index():
     return net_2020
 
-@app.get('/2021')
+@app.get("/2021")
 async def index():
     return net_2021
