@@ -61,12 +61,12 @@ async def index():
 
 @app.get('/2019')
 async def index():
-    return {'2019' : net_2019}
+    return net_2019
 
 @app.get('/2020')
 async def index():
-    return {'2019' : net_2020}
+    return net_2020
 
 @app.get('/2021')
 async def index():
-    return {'2021' : net_2021}
+    return net_2021
